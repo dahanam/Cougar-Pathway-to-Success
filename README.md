@@ -15,10 +15,21 @@ currently in progress.
 ## Research Overview
 
 This project analyzes 6 years (2019–2025) of student engagement and outcome 
-data across 1,220 undergraduate CS/IT students to answer the question:
+data across 1,220 undergraduate CS/IT students to answer these questions:
 
-> *Does participation in research experiences and extracurricular activities 
-> predict career outcomes better than GPA alone?*
+## Research Questions
+
+**RQ1** — How did the Cougar Pathway to Success project evolve across 
+iterative intervention cycles during the grant period?
+
+**RQ2** — How does student engagement in pathway activities relate to 
+participation in research, internships, and career outcomes?
+
+**RQ3** — To what extent is pathway engagement associated with academic 
+success and professional achievement among computing students?
+
+**RQ4** — Which pathway interventions are most strongly associated with 
+increased engagement, inclusion, and indicators of retention?
 
 **Key finding:** Program participation explains **53% of career outcome 
 variance** (R² = 0.53, p < .001) compared to only 9% for GPA.
