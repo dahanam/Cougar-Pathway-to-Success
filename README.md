@@ -3,10 +3,10 @@
 Python analysis and visualization scripts for a longitudinal study of 
 undergraduate student success in CS/IT at Kean University. This codebase 
 produced the figures, statistics, and regression analysis for a paper 
-currently in-progress to be sent to a journal.
+currently in progress.
 
 **Project:** NSF Building Capacity: Cougar Pathway to Success  
-**NSF Awards:** #1928452, #2129795, #2345334  [review]
+**NSF Awards:** #1928452, #2129795, #2345334  
 **Author:** Dahana Moz Ruiz  
 **Institution:** Kean University, CS/IT Department
 
@@ -34,6 +34,7 @@ variance** (R² = 0.53, p < .001) compared to only 9% for GPA.
 | `sweetspot.py` | Engagement threshold analysis — identifies the "sweet spot" activity count where outcome rates jump significantly. Profiles students who achieved all 3 outcomes |
 | `val.py` | Validation and descriptive statistics — computes engagement tiers, demographic breakdowns, outcome counts, GPA summaries, and SI/NSO totals |
 | `demo_race.py` | Demographic data audit — cross-references two student profile sheets to identify and flag missing gender, race, ethnicity, and graduation data |
+| `regression.py` | Full statistical analysis — OLS linear regression, logistic regression with odds ratios and 95% CIs, chi-square tests with Cramér's V, and Cohen's d effect sizes across engagement tiers and outcomes |
 
 ---
 
@@ -50,6 +51,17 @@ Students are segmented into 6 tiers based on total RE + EX activity count:
 | Engaged 3 | 3 | 79 |
 | Medium | 4–6 | 86 |
 | Highly Engaged | 7+ | 89 |
+
+### Statistical Methods (`regression.py`)
+- **OLS Linear Regression** — Total activities → composite outcome score 
+  (R² = 0.53, F(1,671) = 763.05, p < .001)
+- **OLS Linear Regression** — GPA → composite outcome score (R² = 0.09)
+- **Logistic Regression** — Activities + GPA + demographics → each 
+  outcome (odds ratios with 95% confidence intervals)
+- **Chi-Square Tests** — Engagement tier × outcome with Cramér's V 
+  effect sizes
+- **Cohen's d** — GPA differences between engagement tiers and between 
+  outcome achievers vs non-achievers
 
 ### Outcome Variables
 - **Professional Offer** — employment or graduate school acceptance
@@ -87,6 +99,8 @@ Running `activityimpacts.py` produces:
 - **Pandas** — Data loading, merging, and aggregation
 - **NumPy** — Statistical calculations
 - **Matplotlib** — Publication-quality visualizations
+- **SciPy** — Chi-square tests, t-tests
+- **Statsmodels** — OLS and logistic regression
 - **OpenPyXL** — Excel file reading
 
 ---
@@ -94,11 +108,12 @@ Running `activityimpacts.py` produces:
 ## Setup
 
 ```bash
-pip install pandas numpy matplotlib openpyxl
+pip install pandas numpy matplotlib openpyxl scipy statsmodels
 python charts.py
 python activityimpacts.py
 python sweetspot.py
 python val.py
+python regression.py
 ```
 
 ---
@@ -117,13 +132,13 @@ records** across 1,220 unique CS/IT students (2019–2025), merging:
 
 ---
 
-## Publication
-[If accepted:]
+## Publication 
+
 **"Pathways to Undergraduate Success in Computer Science: Impactful 
 Interventions to Improve Student Success"**  
 Dahana Moz Ruiz, Daniel Ojeda, Luis Miguel Velazquez Rodriguez, 
 Ching-Yu Huang, Sarah Hug, Daehan Kwak, Patricia Morreale  
-*In-Progress*
+*In progress*
 
 ---
 
