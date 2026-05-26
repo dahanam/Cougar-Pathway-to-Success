@@ -38,14 +38,14 @@ variance** (R² = 0.53, p < .001) compared to only 9% for GPA.
 
 ## Scripts
 
-| File | Description |
-|------|-------------|
-| `charts.py` | Main visualization pipeline — generates all publication figures including outcome rates by engagement tier, GPA trends, equity analysis, and SI/NSO participation |
-| `activityimpacts.py` | Activity-level impact analysis — ranks RE and EX activities by number of students achieving professional offers, internships, and research outcomes. Generates bar charts and bubble map |
-| `sweetspot.py` | Engagement threshold analysis — identifies the "sweet spot" activity count where outcome rates jump significantly. Profiles students who achieved all 3 outcomes |
-| `val.py` | Validation and descriptive statistics — computes engagement tiers, demographic breakdowns, outcome counts, GPA summaries, and SI/NSO totals |
-| `demo_race.py` | Demographic data audit — cross-references two student profile sheets to identify and flag missing gender, race, ethnicity, and graduation data |
-| `regression.py` | Full statistical analysis — OLS linear regression, logistic regression with odds ratios and 95% CIs, chi-square tests with Cramér's V, and Cohen's d effect sizes across engagement tiers and outcomes |
+| File | RQ | Description |
+|------|----|-------------|
+| `charts.py` | RQ2, RQ3 | Main visualization pipeline — generates all publication figures including outcome rates by engagement tier, GPA trends, equity analysis, and SI/NSO participation |
+| `activityimpacts.py` | RQ4 | Activity-level impact analysis — ranks RE and EX activities by number of students achieving professional offers, internships, and research outcomes. Generates bar charts and bubble map |
+| `sweetspot.py` | RQ2, RQ3 | Engagement threshold analysis — identifies the "sweet spot" activity count where outcome rates jump significantly. Profiles students who achieved all 3 outcomes |
+| `val.py` | RQ1, RQ2 | Validation and descriptive statistics — computes engagement tiers, demographic breakdowns, outcome counts, GPA summaries, and SI/NSO totals |
+| `demo_race.py` | RQ4 | Demographic data audit — cross-references two student profile sheets to identify and flag missing gender, race, ethnicity, and graduation data |
+| `regression.py` | RQ2, RQ3 | Full statistical analysis — OLS linear regression, logistic regression with odds ratios and 95% CIs, chi-square tests with Cramér's V, and Cohen's d effect sizes across engagement tiers and outcomes |
 
 ---
 
@@ -153,7 +153,27 @@ Ching-Yu Huang, Sarah Hug, Daehan Kwak, Patricia Morreale
 
 ---
 
-## Funding
+## Results
 
-This work was supported by the National Science Foundation under Awards 
-#1928452, #2129795, and #2345334, and by the Sloan Foundation.
+### RQ1 — Program Evolution
+![Grant Activity by Year](images/RQ1_activity_by_year.png)
+![SI/NSO Participation Trend](images/RQ1_si_nso_trend.png)
+![Poster: Grant Overview](images/POSTER_RQ1_Grant.png)
+
+### RQ2 — Engagement & Career Outcomes
+![Outcome Rates by Tier](images/RQ2_outcome_rates.png)
+![Job & Internship Rates by Tier](images/RQ2_job_intern_rates.png)
+
+### RQ3 — Academic & Professional Achievement
+![GPA and Research Outcomes by Tier](images/RQ3_gpa_and_ro.png)
+![GPA Distribution by Tier](images/RQ3_gpa_distribution.png)
+
+### RQ4 — Interventions, Inclusion & Retention
+![Demographics by Engagement Tier](images/RQ4_demographics.png)
+![Graduation & SI/NSO by Tier](images/RQ4_graduation_sinso.png)
+
+### Activity-Level Impact
+![Most Impactful RE Activities](images/activity_impact_RE.png)
+![Most Impactful EX Activities](images/activity_impact_EX.png)
+![Activity Impact Bubble Map](images/activity_impact_bubble.png)
+![Outcomes per Student vs Attendance](images/activity_impact_ROI.png)
