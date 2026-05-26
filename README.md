@@ -1,0 +1,133 @@
+# Cougar Pathway to Success — Data Analysis & Visualization
+
+Python analysis and visualization scripts for a longitudinal study of 
+undergraduate student success in CS/IT at Kean University. This codebase 
+produced the figures, statistics, and regression analysis for a paper 
+currently in-progress to be sent to a journal.
+
+**Project:** NSF Building Capacity: Cougar Pathway to Success  
+**NSF Awards:** #1928452, #2129795, #2345334  [review]
+**Author:** Dahana Moz Ruiz  
+**Institution:** Kean University, CS/IT Department
+
+---
+
+## Research Overview
+
+This project analyzes 6 years (2019–2025) of student engagement and outcome 
+data across 1,220 undergraduate CS/IT students to answer the question:
+
+> *Does participation in research experiences and extracurricular activities 
+> predict career outcomes better than GPA alone?*
+
+**Key finding:** Program participation explains **53% of career outcome 
+variance** (R² = 0.53, p < .001) compared to only 9% for GPA.
+
+---
+
+## Scripts
+
+| File | Description |
+|------|-------------|
+| `charts.py` | Main visualization pipeline — generates all publication figures including outcome rates by engagement tier, GPA trends, equity analysis, and SI/NSO participation |
+| `activityimpacts.py` | Activity-level impact analysis — ranks RE and EX activities by number of students achieving professional offers, internships, and research outcomes. Generates bar charts and bubble map |
+| `sweetspot.py` | Engagement threshold analysis — identifies the "sweet spot" activity count where outcome rates jump significantly. Profiles students who achieved all 3 outcomes |
+| `val.py` | Validation and descriptive statistics — computes engagement tiers, demographic breakdowns, outcome counts, GPA summaries, and SI/NSO totals |
+| `demo_race.py` | Demographic data audit — cross-references two student profile sheets to identify and flag missing gender, race, ethnicity, and graduation data |
+
+---
+
+## Key Analyses
+
+### Engagement Tiers
+Students are segmented into 6 tiers based on total RE + EX activity count:
+
+| Tier | Activities | N |
+|------|-----------|---|
+| Not Engaged | 0 | 452 |
+| Engaged 1 | 1 | 347 |
+| Engaged 2 | 2 | 167 |
+| Engaged 3 | 3 | 79 |
+| Medium | 4–6 | 86 |
+| Highly Engaged | 7+ | 89 |
+
+### Outcome Variables
+- **Professional Offer** — employment or graduate school acceptance
+- **Internship** — paid or unpaid internship placement
+- **Research Outcome** — publication, presentation, or research award
+- **Graduation** — degree completion
+
+### Equity Findings
+- Hispanic/Latino representation rises from 33.3% (Not Engaged) to 
+  46.1% (Highly Engaged), exceeding the 39% institutional baseline
+- Female representation rises from 15.5% (Not Engaged) to 34.8% 
+  (Highly Engaged), exceeding the 21% CS/IT departmental baseline
+
+---
+
+## Charts Generated
+
+Running `charts.py` produces publication-ready figures including:
+- Outcome rates (Professional Offer, Internship, Research Outcome, 
+  Graduation) by engagement tier
+- GPA trends across engagement tiers
+- Hispanic/Latino and female representation by tier
+- SI (Supplemental Instruction) participation over time
+
+Running `activityimpacts.py` produces:
+- Horizontal bar charts of top RE and EX activities ranked by outcomes
+- Bubble map of activity impact (Professional Offers vs Research Outcomes)
+- ROI scatter plot (outcomes per student vs attendance)
+
+---
+
+## Tech Stack
+
+- **Python** — Core language
+- **Pandas** — Data loading, merging, and aggregation
+- **NumPy** — Statistical calculations
+- **Matplotlib** — Publication-quality visualizations
+- **OpenPyXL** — Excel file reading
+
+---
+
+## Setup
+
+```bash
+pip install pandas numpy matplotlib openpyxl
+python charts.py
+python activityimpacts.py
+python sweetspot.py
+python val.py
+```
+
+---
+
+## Dataset
+
+The analysis uses a longitudinal dataset of **3,191 student activity 
+records** across 1,220 unique CS/IT students (2019–2025), merging:
+- Institutional student profile data
+- Departmental engagement and achievement records
+- SI/NSO participation logs
+
+> ⚠️ Dataset not included in this repository. The dataset contains 
+> protected student education records (FERPA) and is not available 
+> for public distribution.
+
+---
+
+## Publication
+[If accepted:]
+**"Pathways to Undergraduate Success in Computer Science: Impactful 
+Interventions to Improve Student Success"**  
+Dahana Moz Ruiz, Daniel Ojeda, Luis Miguel Velazquez Rodriguez, 
+Ching-Yu Huang, Sarah Hug, Daehan Kwak, Patricia Morreale  
+*In-Progress*
+
+---
+
+## Funding
+
+This work was supported by the National Science Foundation under Awards 
+#1928452, #2129795, and #2345334, and by the Sloan Foundation.
