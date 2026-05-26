@@ -22,7 +22,7 @@ df['Total_RE_EX'] = df['Num_RE'] + df['Num_EX']
 df = df.drop(columns=['ach_RE', 'ach_EX'])
 
 # Outcome flags
-job_ids    = set(achievements[achievements['Type'] == 'Job Offer']['Kean ID'].dropna())
+job_ids    = set(achievements[achievements['Type'] == 'Professional Offer']['Kean ID'].dropna())
 intern_ids = set(achievements[achievements['Type'] == 'Intern']['Kean ID'].dropna())
 ro_ids     = set(achievements[achievements['Type'] == 'RO']['Kean ID'].dropna())
 
@@ -96,7 +96,7 @@ print('=' * 65)
 predictors  = ['Total_RE_EX', 'Num_RE', 'Num_EX', 'To Term Gpa Ug', 'is_hispanic', 'is_female']
 pred_labels = ['Total RE+EX', 'Num RE only', 'Num EX only', 'GPA', 'Hispanic/Latino', 'Female']
 
-for outcome, col in [('Job Offer','has_job'), ('Internship','has_intern'), ('Research Outcome','has_ro')]:
+for outcome, col in [('Professional Offer','has_job'), ('Internship','has_intern'), ('Research Outcome','has_ro')]:
     model_df = df[predictors + [col]].dropna()
 
     # Drop collinear columns for cleaner model — run Total only (not RE+EX separately)
@@ -142,7 +142,7 @@ def tier(x):
 df['tier'] = df['Total_RE_EX'].apply(tier)
 TIER_ORDER = ['0', '1', '2', '3', '4-6', '7+']
 
-for outcome, col in [('Job Offer','has_job'), ('Internship','has_intern'), ('Research Outcome','has_ro')]:
+for outcome, col in [('Professional Offer','has_job'), ('Internship','has_intern'), ('Research Outcome','has_ro')]:
     contingency = []
     for t in TIER_ORDER:
         sub = df[df['tier'] == t]
