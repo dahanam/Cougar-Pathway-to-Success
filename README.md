@@ -158,7 +158,6 @@ Ching-Yu Huang, Sarah Hug, Daehan Kwak, Patricia Morreale
 ### RQ1 — Program Evolution
 ![Grant Activity by Year](images/RQ1_activity_by_year.png)
 ![SI/NSO Participation Trend](images/RQ1_si_nso_trend.png)
-![Poster: Grant Overview](images/POSTER_RQ1_Grant.png)
 
 ### RQ2 — Engagement & Career Outcomes
 ![Outcome Rates by Tier](images/RQ2_outcome_rates.png)
